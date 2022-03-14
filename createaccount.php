@@ -14,7 +14,7 @@
                 <form action="account-output.php" method="post">
                     Username: <input type="text" name="username"><br>
                     Password: <input type="text" name="password"><br>
-                    Avatar: <input type="file" name="avatar"><br>
+                    Avatar: <input type="file" name="avatar" enctype="multipart/form-data"><br>
                     <inpu type="submit" value="Create">
                 </form>
             </div>';

@@ -19,7 +19,8 @@ create table subscription (
 
 create database userdata {
     username varchar(30) not null,
-    password varchar(30) not null
+    password varchar(30) not null,
+    avatar varchar(30) not null
 };
 
 create database comments (
