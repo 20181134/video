@@ -1,7 +1,7 @@
-drop database if exists video-sharing;
-create database video-sharing character set utf8 collate utf8-general-ci;
-grant all on vide-sharing.* to 'admin'@'localhost' identified as 'password';
-use video-sharing;
+drop database if exists video_sharing;
+create database video_sharing character set utf8 collate utf8_general_ci;
+grant all on video_sharing.* to 'admin'@'localhost' identified by 'password';
+use video_sharing;
 
 create table videos (
     id int auto_increment primary key,
@@ -9,21 +9,21 @@ create table videos (
     description varchar(300) not null,
     uploader varchar(50) not null,
     likes varchar(10) not null,
-    uploaded-date varchar(8) not null
+    uploaded_date varchar(8) not null
 );
 
 create table subscription (
-    from varchar(30) not null,
-    to varchar(30) not null
+    from1 varchar(30) not null,
+    to1 varchar(30) not null
 );
 
-create database userdata {
+create table userdata (
     username varchar(30) not null,
     password varchar(30) not null,
     avatar varchar(30) not null
-};
+);
 
-create database comments (
+create table comments (
     video varchar(30) not null,
     username varchar(30) not null,
     comment varchar(200) not null

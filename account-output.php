@@ -11,7 +11,7 @@
   session_start();
   unset $_SESSION['user'];
   // Connect to SQL database
-  $pdo = new PDO('mysql:host=localhost;dbname=video-sharing;charset=utf8', 'admin', 'password');
+  $pdo = new PDO('mysql:host=localhost;dbname=video_sharing;charset=utf8', 'admin', 'password');
   $stmt = $pdo->prepare('INSERT INTO userdata values(?, ?, ?)');
 
   // Upload avatar
@@ -37,7 +37,7 @@
   echo '<br><a href="./home.php">Back</a>';
 
   // Set $_SESSION['user']
-  $stmt2 = $pdo->prepare('SELECT * FROM video-sharing where username=? and password=?');
+  $stmt2 = $pdo->prepare('SELECT * FROM video_sharing where username=? and password=?');
   if ($stmt2->execute([$_REQUEST['username'], $_REQUEST['password']])) {
     foreach ($stmt2 as $row) {
       $_SESSION['user'] = [

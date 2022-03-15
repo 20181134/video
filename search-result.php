@@ -13,7 +13,7 @@
    <header></header>
    <main>
      <?php
-     $pdo=new PDO('mysql:host=localhost;dbname=video-sharing;charset=utf8;', 'admin', 'password');
+     $pdo=new PDO('mysql:host=localhost;dbname=video_sharing;charset=utf8;', 'admin', 'password');
      foreach ($pdo->query('SELECT * FROM videos where title like %'.$_REQUEST['keyword'].'%') as $row)  {
        echo $row['videos'], '<br>';
      }
