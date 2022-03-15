@@ -1,6 +1,6 @@
 <html>
 <head>
-  <meta cahrset="utf-8".
+  <meta charset="utf-8">
   <title>Sign In</title>
   <link rel="stylesheet" href="stylesheet.css">
 </head>
@@ -8,7 +8,8 @@
   <header></header>
   <main>
     <?php
-    $pdo = new PDO('mysql:host=localhost;dbname=video_sharing;charset=utf8' 'admin', 'password');
+    unset($_SESSION['user']);
+    $pdo = new PDO('mysql:host=localhost;dbname=video_sharing;charset=utf8;' 'admin', 'password');
     $stmt = $pdo->prepare('SELECT * FROM userdata where username=? and password=?');
     if ($stmt->execute([$_REQUEST['username'], $_REQUEST['password']])) {
       foreach ($stmt as $row) {
@@ -19,9 +20,9 @@
       }
     }
     if (isset($_SESSION['user'])) {
-      echo 'Logged in successfully';
+      echo 'Logged in as ', $_REQUEST['user']['username'];
     } else {
-      echo 'Username or password is incoreect';
+      echo 'Username or password is incorrect';
     }
     echo '<br><a href="./home.php">Back to Home';
     ?>

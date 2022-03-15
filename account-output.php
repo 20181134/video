@@ -7,7 +7,7 @@
 <body>
   <header></header>
   <main>
-    <h1>Create a new Account</h1>
+    <h1>New Account Creation</h1>
   <?php
   session_start();
   // Upload avatar
@@ -33,6 +33,8 @@
               'avatar'=>$row['avatar']
             ];
           }
+        } else {
+          echo 'Could not log in';
         }
       } else {
         echo 'Could not create your account.';
@@ -42,7 +44,7 @@
       echo 'Could not upload your avatar';
     }
   } else {
-    echo 'Your avatar was not an uploaded file';
+    echo 'Your avatar is not an uploaded file';
   }
    ?>
  </main>

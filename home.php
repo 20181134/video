@@ -20,6 +20,7 @@
                 echo '<a href="./signout.php">', $_SESSION['user']['username'], '<a>';
               } else {
                 echo '<a href="./signin.php">Log In</a>';
+                echo '<a href="./createaccount.php">Create a new account</a>';
               }
               ?>
             <div>
