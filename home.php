@@ -7,7 +7,22 @@
     <body>
         <header>
             <div class="logo"></div>
-            <div class="links"><div>
+            <div class="searchbar">
+              <form action="search-result.php">
+                <input type="text" name="keyword">
+                <input type="submit" value="Search">
+              </form>
+            </div>
+            <div class="links">
+              <?php
+              session_start();
+              if (isset($_SESSION['user'])) {
+                echo '<a href="./signout.php">', $_SESSION['user']['username'], '<a>';
+              } else {
+                echo '<a href="./signin.php">Log In</a>';
+              }
+              ?>
+            <div>
         </header>
         <main>
             <div class="timeline">
@@ -19,7 +34,12 @@
             </div>
             <div class="sidebar">
               <div class="account-information">
-                
+                <?php
+                if (isset($_SESSION['user'])) {
+                  echo '<img src="', $_SESSION['user']['avatar'];
+                  echo $_SESSION['user']['username'];
+                }
+                 ?>
             </div>
         </main>
         <footer></footer>
