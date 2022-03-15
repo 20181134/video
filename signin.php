@@ -7,11 +7,18 @@
 <body>
   <header></header>
   <main>
-  <form action="signin-output.php" method="post">
-    Username: <input type="text" name="username"><br>
-    Password: <input type="password" name="password"><br>
-    <input type="submit" value="Sign In">
-  </form>
+    <?php
+    if (!isset($_SESSION['user'])) {
+      echo '
+    <form action="signin-output.php" method="post">
+      Username: <input type="text" name="username"><br>
+      Password: <input type="password" name="password"><br>
+      <input type="submit" value="Sign In">
+      </form>';
+    } else {
+      echo "You've already signed in";
+    }
+  ?>
   </main>
   <footer></footer>
 </body>

@@ -8,7 +8,6 @@
   <header></header>
   <main>
     <?php
-    unset($_SESSION['user']);
     $pdo = new PDO('mysql:host=localhost;dbname=video_sharing;charset=utf8;' 'admin', 'password');
     $stmt = $pdo->prepare('SELECT * FROM userdata where username=? and password=?');
     if ($stmt->execute([$_REQUEST['username'], $_REQUEST['password']])) {
@@ -24,7 +23,7 @@
     } else {
       echo 'Username or password is incorrect';
     }
-    echo '<br><a href="./home.php">Back to Home';
+    echo '<br><a href="./home.php">Back to Home</a>';
     ?>
   </main>
   <footer></footer>
