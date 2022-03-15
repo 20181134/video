@@ -8,7 +8,7 @@
   <header></header>
   <main>
     <?php
-    $pdo = new PDO('mysql:host=localhost;dbname=video_sharing;charset=utf8;' 'admin', 'password');
+    $pdo = new PDO('mysql:host=localhost;dbname=video_sharing;charset=utf8;', 'admin', 'password');
     $stmt = $pdo->prepare('SELECT * FROM userdata where username=? and password=?');
     if ($stmt->execute([$_REQUEST['username'], $_REQUEST['password']])) {
       foreach ($stmt as $row) {
@@ -19,7 +19,7 @@
       }
     }
     if (isset($_SESSION['user'])) {
-      echo 'Logged in as ', $_REQUEST['user']['username'];
+      echo 'Logged in as ', $_SESSION['user']['username'];
     } else {
       echo 'Username or password is incorrect';
     }

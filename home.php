@@ -37,7 +37,7 @@
               <div class="account-information">
                 <?php
                 if (isset($_SESSION['user'])) {
-                  echo '<img src="', $_SESSION['user']['avatar'];
+                  echo '<img src="', $_SESSION['user']['avatar'], '">';
                   echo $_SESSION['user']['username'];
                 }
                  ?>
