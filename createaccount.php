@@ -13,7 +13,7 @@
             echo '<div class="new-account">
                 <form action="account-output.php" method="post">
                     Username: <input type="text" name="username"><br>
-                    Password: <input type="text" name="password"><br>
+                    Password: <input type="password" name="password"><br>
                     Avatar: <input type="file" name="avatar" enctype="multipart/form-data"><br>
                     <input type="submit" value="Create">
                 </form>
