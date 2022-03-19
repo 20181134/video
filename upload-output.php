@@ -32,6 +32,6 @@
     echo 'The video was not an uploaded file<br>';
   }
    ?>
-   <a href="./home">Back to Home</a>
+   <a href="./home.php">Back to Home</a>
  </body>
  </html>
