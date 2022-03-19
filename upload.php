@@ -9,8 +9,8 @@
   session_start();
   if (isset($_SESSION['user'])) {
     echo '<form action="upload-output.php">';
-    echo 'Title: <input type="text" name="title">';
-    echo 'Description: <textarea name="deescription"></textarea>';
+    echo 'Title: <input type="text" name="title"><br>';
+    echo 'Description: <textarea name="deescription"></textarea><br>';
     echo 'Select a video: <input type="file" name="upload">';
     echo '<input type="submit" value="Upload">';
     echo '</form>';
