@@ -14,6 +14,7 @@
               </form>
             </div>
             <div class="links">
+              <a href=./upload.php>Upload</a>
               <?php
               session_start();
               if (isset($_SESSION['user'])) {
