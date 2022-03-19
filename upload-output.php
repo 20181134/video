@@ -13,7 +13,7 @@
     if (!file_exists('videos')) {
       mkdir('videos');
     }
-    $videoname='videos/'.basename($_FILES['upload']['tmp_name']);
+    $videoname='videos/'.basename($_FILES['upload']['tmp_name']).'.mov';
     if (move_uploaded_file($_FILES['upload']['tmp_name'], $videoname)) {
       echo 'Your video has been uploaded.<br>';
       // SQL
