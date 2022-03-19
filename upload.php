@@ -11,7 +11,7 @@
     echo '<form action="upload-output.php" enctype="multipart/form-data" method="post">';
     echo 'Title: <input type="text" name="title"><br>';
     echo 'Description: <textarea name="deescription"></textarea><br>';
-    echo 'Select a video: <input type="file" name="upload">';
+    echo 'Select a video: <input type="file" name="video">';
     echo '<input type="submit" value="Upload">';
     echo '</form>';
   } else {
