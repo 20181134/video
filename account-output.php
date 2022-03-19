@@ -25,20 +25,20 @@
       if ($stmt->execute([$_REQUEST['username'], $_REQUEST['password'], $file])) {
         echo 'Created your account successfully.<br>';
         // Set $_SESSION['user']
-        $stmt2 = $pdo->prepare('SELECT * FROM video_sharing where username=? and password=?');
-        if ($stmt2->execute([$_REQUEST['username'], $_REQUEST['password']])) {
-          foreach ($stmt2 as $row) {
-            $_SESSION['user'] = [
-              'username'=>$row['username'],
-              'avatar'=>$row['avatar']
-            ];
-          }
-        }
-        if (isset($_SESSION['user'])) {
-          echo 'Logged in successfully.<br>';
-        } else {
-          echo 'Could not log in.<br>';
-        }
+        //$stmt2 = $pdo->prepare('SELECT * FROM video_sharing where username=? and password=?');
+        //if ($stmt2->execute([$_REQUEST['username'], $_REQUEST['password']])) {
+          //foreach ($stmt2 as $row) {
+            //$_SESSION['user'] = [
+              //'username'=>$row['username'],
+              //'avatar'=>$row['avatar']
+            //];
+          //}
+        //}
+        //if (isset($_SESSION['user'])) {
+          //echo 'Logged in successfully.<br>';
+        //} else {
+          //echo 'Could not log in.<br>';
+        //}
       } else {
         echo 'Could not create your account.';
       }

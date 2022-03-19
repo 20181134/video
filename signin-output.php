@@ -8,6 +8,7 @@
   <header></header>
   <main>
     <?php
+    session_start();
     $pdo = new PDO('mysql:host=localhost;dbname=video_sharing;charset=utf8;', 'admin', 'password');
     $stmt = $pdo->prepare('SELECT * FROM userdata where username=? and password=?');
     if ($stmt->execute([$_REQUEST['username'], $_REQUEST['password']])) {

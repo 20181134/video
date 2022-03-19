@@ -6,6 +6,7 @@
 </head>
 <body>
   <?php
+  session_start();
   unset($_SESSION['user']);
   if (!isset($_SESSION['user'])) {
     echo 'Logged out successfully.';
