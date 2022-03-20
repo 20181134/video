@@ -12,7 +12,8 @@
     if (!file_exists('videos')) {
       mkdir('videos');
     }
-    $videoname='videos/'.basename($_FILES['video']['tmp_name']).'.mov';
+    // CHANGE THE EXTENSION TO .MOV
+    $videoname='videos/'.basename($_FILES['video']['tmp_name']).'.jpg';
     if (move_uploaded_file($_FILES['video']['tmp_name'], $videoname)) {
       echo 'Your video has been uploaded.<br>';
       // SQL
@@ -20,7 +21,8 @@
       $date=date('Y/m/d');
       $pdo=new PDO('mysql:host=localhost;dbname=video_sharing;charset=utf8;', 'admin', 'password');
       $stmt=$pdo->prepare('INSERT INTO videos values(?, ?, ?, ?, ?, ?, ?)');
-      if ($stmt->execute([null, $_REQUEST['title'], $_REQUEST['description'], $_SESSION['user']['username'], null, $date, $videoname])) {
+      $username=$_SESSION['user']['username'];
+      if ($stmt->execute([null, $_REQUEST['title'], $_REQUEST['description'], $username, null, $date, $videoname])) {
         echo "Uploaded your video's information to SQL database<br>";
       } else {
         echo "Could not upload your video's information to SQL database<br>";
