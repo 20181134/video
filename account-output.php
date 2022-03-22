@@ -28,7 +28,7 @@
         $userpage = fopen('./user/'.$_REQUEST['username'].'.php', "w");
         $str = file_get_contents('account-template.txt');
         $str = str_replace('Username', $_REQUEST['username'], $str);
-        $str = str_replace('Icon', 'avatar/'.basename($_FILES['avatar']['tmp_name']), $str);
+        $str = str_replace('Icon', basename($_FILES['avatar']['tmp_name']), $str);
         // 置き換える文字列を追加
         fwrite($userpage, $str);
         if (file_exists('./user/'.$_REQUEST['username'].'.php')) {
