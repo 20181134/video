@@ -33,7 +33,18 @@
   </div>
   <div class="uploads">
     <h2>Uploads</h2>
-    <!-- PHP code here -->
+    <?php
+    $pdo=new PDO('mysql:host=localhost;dbname=video_sharing;charset=utf8;', 'admin', 'password');
+    $stmt=$pdo->prepare('SELECT * FROM videos where uploader=Username');
+    if ($stmt->execute()) {
+      foreach ($stmt as $row) {
+        echo '<div class="uploaded">';
+        echo '<img src="', $row['thumbnail'], '">';
+        echo '<p>', $row['title'], '</p>';
+        echo '</div>';
+      }
+    }
+    ?>
   </div>
   <div class="comments">
     <h2>Channel Comments</h2>
