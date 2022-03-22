@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Username</title>
+  <title>a</title>
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
       </form>
     </div>
     <div class="links">
-      <a href=../upload.php>Upload</a>
+      <a href=./upload.php>Upload</a>
       <?php
       session_start();
       if (isset($_SESSION['user'])) {
@@ -28,14 +28,14 @@
   </header>
   <main>
   <div class="information">
-    <img src="Icon.jpg">
-    <p>Username</p>
+    <img src="../../avatar/php5LaXtY.jpg">
+    <p>a</p>
   </div>
   <div class="uploads">
     <h2>Uploads</h2>
     <?php
     $pdo=new PDO('mysql:host=localhost;dbname=video_sharing;charset=utf8;', 'admin', 'password');
-    $stmt=$pdo->prepare('SELECT * FROM videos where uploader=Username');
+    $stmt=$pdo->prepare('SELECT * FROM videos where uploader=a');
     if ($stmt->execute()) {
       foreach ($stmt as $row) {
         echo '<div class="uploaded">';
