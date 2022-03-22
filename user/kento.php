@@ -28,7 +28,7 @@
   </header>
   <main>
   <div class="information">
-    <img src="./avatar/php2GJ8C3.jpg">
+    <img src="../avatar/php2GJ8C3.jpg">
     <p>kento</p>
   </div>
   <div class="uploads">
