@@ -31,7 +31,7 @@
         $str = str_replace('Icon', $file, $str);
         // 置き換える文字列を追加
         fwrite($userpage, $str);
-        if (file_exists('./user/'.$_REQUEST['username'].'.html')) {
+        if (file_exists('./user/'.$_REQUEST['username'].'.php')) {
           echo 'Your channel has been created!<br>';
         } else {
           echo 'Could not create your channel.<br>';
