@@ -8,7 +8,7 @@ create table videos (
     title varchar(30) not null,
     description varchar(300) not null,
     uploader varchar(50) not null,
-    likes varchar(10) not null,
+    likes varchar(10),
     uploaded_date varchar(8) not null,
     location varchar(30) not null,
     thumbnail varchar(30) not null
