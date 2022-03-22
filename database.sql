@@ -5,13 +5,13 @@ use video_sharing;
 
 create table videos (
     id int auto_increment primary key,
-    title varchar(30) not null,
-    description varchar(300) not null,
-    uploader varchar(50) not null,
-    likes varchar(10),
-    uploaded_date varchar(8) not null,
-    location varchar(30) not null,
-    thumbnail varchar(30) not null
+    title text not null,
+    description text not null,
+    uploader text not null,
+    likes text,
+    uploaded_date text not null,
+    location text not null,
+    thumbnail text not null
 );
 
 create table subscription (

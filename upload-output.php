@@ -41,6 +41,7 @@
         echo "Uploaded your video's information to SQL database<br>";
       } else {
         echo "Could not upload your video's information to SQL database<br>";
+        print_r($stmt->errorInfo());
       }
     } else {
       echo 'Could not upload your video.<br>';

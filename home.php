@@ -29,10 +29,21 @@
         </header>
         <main>
             <div class="timeline">
-                <h2>Most Viewed</h2>
+                <h2>Recently Uploaded</h2>
                 <?php
                 $pdo = new PDO('mysql:host=localhost;dbname=video_sharing;charset=utf8', 'admin', 'password');
                 $stmt = $pdo->prepare('SELECT * FROM videos');
+                if ($stmt->execute()) {
+                  foreach ($stmt as $row) {
+                    echo '<div class="tl">';
+                    echo '<a href="./'.$row['location'].'">';
+                    echo '<img src="./'.$row['thumbnail'].'">';
+                    echo '<p>'.$row['title'].'</p>';
+                    echo '<p>'.$row['uploader'].'</p>';
+                    echo '</a>';
+                    echo '</div>';
+                  }
+                }
                 ?>
             </div>
             <div class="sidebar">
