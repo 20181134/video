@@ -1,0 +1,12 @@
+header {
+    background-color:lightcyan;
+}
+.head {
+    white-space:nowrap;
+}
+.links {
+    float:right;
+}
+.link {
+    margin:3px;
+}
