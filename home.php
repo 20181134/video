@@ -37,7 +37,7 @@
                   foreach ($stmt as $row) {
                     echo '<div class="tl">';
                     echo '<a href="./'.$row['location'].'">';
-                    echo '<img src="./'.$row['thumbnail'].'">';
+                    echo '<img class="thumbnail" src="./'.$row['thumbnail'].'">';
                     echo '<p>'.$row['title'].'</p>';
                     echo '<p>'.$row['uploader'].'</p>';
                     echo '</a>';
@@ -50,7 +50,7 @@
               <div class="account-information">
                 <?php
                 if (isset($_SESSION['user'])) {
-                  echo '<img src="', $_SESSION['user']['avatar'], '">';
+                  echo '<img class="avatar" src="', $_SESSION['user']['avatar'], '">';
                   echo $_SESSION['user']['username'];
                 }
                  ?>

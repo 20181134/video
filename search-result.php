@@ -14,8 +14,16 @@
    <main>
      <?php
      $pdo=new PDO('mysql:host=localhost;dbname=video_sharing;charset=utf8;', 'admin', 'password');
-     foreach ($pdo->query('SELECT * FROM videos where title like %'.$_REQUEST['keyword'].'%') as $row)  {
-       echo $row['videos'], '<br>';
+     $stmt=$pdo->prepare('SELECT * FROM videos where title like %?%');
+     if ($stmt->execute([$_REQUEST['keyword']])) {
+       foreach ($stmt as $row) {
+         echo '<div class="result">';
+         echo '<a href="./'.$row['location'].'">';
+         echo '<img src="'.$row['thumbnail'].'">';
+         echo '<p>'.$row['title'].'</p>';
+         echo '<p> Uploaded by '.$row['uploader'].'</p>';
+         echo '</div>';
+       }
      }
       ?>
    </main>
