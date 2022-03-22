@@ -25,7 +25,7 @@
       if ($stmt->execute([$_REQUEST['username'], $_REQUEST['password'], $file])) {
         echo 'Created your account successfully.<br>';
         // Account page Creation
-        $userpage = fopen('./user/'.$_REQUEST['username'].'.html', "w");
+        $userpage = fopen('./user/'.$_REQUEST['username'].'.php', "w");
         $str = file_get_contents('account-template.txt');
         $str = str_replace('Username', $_REQUEST['username'], $str);
         // 置き換える文字列を追加
