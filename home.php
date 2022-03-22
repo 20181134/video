@@ -18,6 +18,7 @@
               <?php
               session_start();
               if (isset($_SESSION['user'])) {
+                echo '<a href="./user/'.$_SESSION['user']['username'].'.php">My Channel</a>';
                 echo '<a href="./signout.php">', $_SESSION['user']['username'], '<a>';
               } else {
                 echo '<a href="./signin.php">Log In</a>';
