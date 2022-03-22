@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Username</title>
+  <title>test6</title>
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
@@ -28,14 +28,14 @@
   </header>
   <main>
   <div class="information">
-    <img src="./avatar/Icon.jpg">
-    <p>Username</p>
+    <img src="./$file">
+    <p>test6</p>
   </div>
   <div class="uploads">
     <h2>Uploads</h2>
     <?php
     $pdo=new PDO('mysql:host=localhost;dbname=video_sharing;charset=utf8;', 'admin', 'password');
-    $stmt=$pdo->prepare('SELECT * FROM videos where uploader=Username');
+    $stmt=$pdo->prepare('SELECT * FROM videos where uploader=test6');
     if ($stmt->execute()) {
       foreach ($stmt as $row) {
         echo '<div class="uploaded">';
