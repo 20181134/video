@@ -16,13 +16,26 @@
     $videoname='videos/'.basename($_FILES['video']['tmp_name']).'.jpg';
     if (move_uploaded_file($_FILES['video']['tmp_name'], $videoname)) {
       echo 'Your video has been uploaded.<br>';
+      // Upload thumbnail
+      if (is_uploaded_file($_FILES['thumbnail']['tmp_name'])) {
+        if (!file_exists('thumbnail')) {
+          mkdir ('thumbnail');
+        }
+      }
+      $thumbnail='thumbnail/'.basename($_FILES['thumbnail']['tmp_name'].'.jpg');
+      if (move_uploaded_file($_FILES['thumbnail']['tmp_name'], $thumbnail)) {
+        echo 'Thumbnail has been uploaded.<br>';
+      } else {
+        echo 'Could not upload your thumbnail<br>';
+      }
+
       // SQL
       date_default_timezone_set('Japan');
       $date=date('Y/m/d');
       $pdo=new PDO('mysql:host=localhost;dbname=video_sharing;charset=utf8;', 'admin', 'password');
-      $stmt=$pdo->prepare('INSERT INTO videos values(?, ?, ?, ?, ?, ?, ?)');
+      $stmt=$pdo->prepare('INSERT INTO videos values(?, ?, ?, ?, ?, ?, ?, ?)');
       $username=$_SESSION['user']['username'];
-      if ($stmt->execute([null, $_REQUEST['title'], $_REQUEST['description'], $username, null, $date, $videoname])) {
+      if ($stmt->execute([null, $_REQUEST['title'], $_REQUEST['description'], $username, null, $date, $videoname, $thumbnail])) {
         echo "Uploaded your video's information to SQL database<br>";
       } else {
         echo "Could not upload your video's information to SQL database<br>";

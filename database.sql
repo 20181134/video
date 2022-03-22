@@ -10,7 +10,8 @@ create table videos (
     uploader varchar(50) not null,
     likes varchar(10) not null,
     uploaded_date varchar(8) not null,
-    location varchar(30) not null
+    location varchar(30) not null,
+    thumbnail varchar(30) not null
 );
 
 create table subscription (

@@ -24,6 +24,18 @@
       // Put information to SQL database
       if ($stmt->execute([$_REQUEST['username'], $_REQUEST['password'], $file])) {
         echo 'Created your account successfully.<br>';
+        // Account page Creation
+        $userpage = fopen('./user/'.$_REQUEST['username'].'.html', "w");
+        $str = file_get_contents('account-template.txt');
+        $str = str_replace('Username', $_REQUEST['username'], $str);
+        // 置き換える文字列を追加
+        fwrite($userpage, $str);
+        if (file_exists('./user/'.$_REQUEST['username'].'.html')) {
+          echo 'Your channel has been created!<br>';
+        } else {
+          echo 'Could not create your channel.<br>';
+        }
+
         // Set $_SESSION['user']
         //$stmt2 = $pdo->prepare('SELECT * FROM video_sharing where username=? and password=?');
         //if ($stmt2->execute([$_REQUEST['username'], $_REQUEST['password']])) {
