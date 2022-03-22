@@ -21,6 +21,8 @@
         if (!file_exists('thumbnail')) {
           mkdir ('thumbnail');
         }
+      } else {
+        echo 'Your thumbnail is not an uploaded file<br>';
       }
       $thumbnail='thumbnail/'.basename($_FILES['thumbnail']['tmp_name'].'.jpg');
       if (move_uploaded_file($_FILES['thumbnail']['tmp_name'], $thumbnail)) {

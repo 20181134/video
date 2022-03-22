@@ -12,7 +12,7 @@
     echo 'Title: <input type="text" name="title"><br>';
     echo 'Description: <textarea name="description"></textarea><br>';
     echo 'Select a video: <input type="file" name="video"><br>';
-    echo 'Thumbnail: <input type="file" name="thubnail">';
+    echo 'Thumbnail: <input type="file" name="thumbnail">';
     echo '<input type="submit" value="Upload">';
     echo '</form>';
   } else {
