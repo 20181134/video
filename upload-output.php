@@ -39,6 +39,9 @@
       $username=$_SESSION['user']['username'];
       if ($stmt->execute([null, $_REQUEST['title'], $_REQUEST['description'], $username, null, $date, $videoname, $thumbnail])) {
         echo "Uploaded your video's information to SQL database<br>";
+        // Create a video page
+        
+
       } else {
         echo "Could not upload your video's information to SQL database<br>";
         print_r($stmt->errorInfo());
